@@ -1,4 +1,4 @@
-name: Deploy Ghost Theme
+name: Deploy Theme
 on:
   push:
     branches:
