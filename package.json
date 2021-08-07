@@ -86,6 +86,11 @@
             "xl": {
                 "width": 2000
             }
+        },
+        "social": {
+            "instagram": "https://www.instagram.com/clockworkstudios8/",
+            "pinterest": "https://www.pinterest.com/clockworkstudios1/",
+            "youtube": "https://www.youtube.com/channel/UCvYdRKuaPIS4AR9zMVqE0fg"
         }
     },
     "renovate": {
