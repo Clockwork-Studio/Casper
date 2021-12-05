@@ -48,7 +48,7 @@
 
         <div class="post-feed">
             {{#foreach posts}}
-                {{^has tag="#hide"}}
+                {{^has tag="#Hidden"}}
                     {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
                     {{> "post-card"}} 
                 {{/has}}
