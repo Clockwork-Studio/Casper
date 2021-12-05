@@ -10,6 +10,9 @@ into the {body} of the default.hbs template --}}
     color: white;
     background: black;
 	}
+ .post-card {
+    min-height: 120px;
+ }
 </style>
 
 <div class="site-header-content">
@@ -39,14 +42,17 @@ into the {body} of the default.hbs template --}}
 {{!-- The main content area --}}
 <main id="site-main" class="site-main outer">
     <div class="inner posts">
+        
 
         <div class="post-feed">
-            {{#foreach posts}}
+            {{#get "posts" limit="all" filter="tag:dex+tag:clockwork" order="title asc"}}
+                {{#foreach posts}}
 
-                {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
-                {{> "dex-card"}}
+                    {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
+                    {{> "dex-card"}}
 
-            {{/foreach}}
+                {{/foreach}}
+            {{/get}}
         </div>
 
     </div>
