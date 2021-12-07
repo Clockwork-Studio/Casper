@@ -27,7 +27,6 @@
                 </p>
 
                 <div class="author-profile-meta">
-                    <div class="author-profile-social-link">Hello!</div>
                     {{#if location}}
                     <div class="author-profile-location">📍 {{location}}</div>
                     {{/if}}
@@ -49,8 +48,11 @@
 
         <div class="post-feed">
             {{#foreach posts}}
-                {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
-                {{> "post-card"}}
+                {{^has tag="#Hidden"}}
+                    {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
+                    {{> "post-card"}} 
+                {{/has}}
+
             {{/foreach}}
         </div>
 
