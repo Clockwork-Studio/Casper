@@ -45,7 +45,7 @@ into the {body} of the default.hbs template --}}
         
 
         <div class="post-feed">
-            {{#get "posts" limit="all" filter="tag:dex+tag:clockwork" order="title asc"}}
+            {{#get "posts" limit="all" filter="tag:dex+clockwork" order="title asc"}}
                 {{#foreach posts}}
 
                     {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
