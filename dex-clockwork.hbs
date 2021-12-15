@@ -56,7 +56,7 @@ into the {body} of the default.hbs template --}}
             {{/if}}
         {{/get}}
 
-        {{#get "posts" limit="all" filter="tag:dex+tag:clockwork+tag:hash-world" order="title asc"}}
+        {{#get "posts" limit="all" filter="tag:dex+tag:clockwork+tag:-hash-creature+tag:hash-world" order="title asc"}}
             {{#if posts}}
                 <div class="post-feed">
                     {{#foreach posts}}
@@ -81,6 +81,6 @@ into the {body} of the default.hbs template --}}
                 </div>
             {{/if}}
         {{/get}}
-        
+
     </div>
 </main>
