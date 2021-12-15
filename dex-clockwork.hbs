@@ -27,6 +27,9 @@ into the {body} of the default.hbs template --}}
         
         {{#get "posts" limit="all" filter="tag:dex+tag:clockwork+tag:hash-creature" order="title asc"}}
             {{#if posts}}
+
+            <h1 class="article-title" style="text-align:center;margin-top:4vmin;">Creatures</h1>
+
             <div class="post-feed">
                 {{#foreach posts}}
 
@@ -40,6 +43,8 @@ into the {body} of the default.hbs template --}}
 
         {{#get "posts" limit="all" filter="tag:dex+tag:clockwork+tag:-hash-creature+tag:hash-world" order="title asc"}}
             {{#if posts}}
+                <h1 class="article-title" style="text-align:center;margin-top:4vmin;">World</h1>
+
                 <div class="post-feed">
                     {{#foreach posts}}
 
