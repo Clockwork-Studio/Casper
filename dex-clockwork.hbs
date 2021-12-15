@@ -16,7 +16,7 @@ into the {body} of the default.hbs template --}}
 </style>
 
 <div class="site-header-content">
-    {{#get "tags" visibility="internal" limit="all" filter:"slug:clockwork"}} {{tags}}
+    {{#get "tags" visibility="all" limit="all" filter:"slug:clockwork"}} {{tags}}
         {{#if feature_image}}
             {{!-- This is a responsive image, it loads different sizes depending on device
             https://medium.freecodecamp.org/a-guide-to-responsive-images-with-ready-to-use-templates-c400bd65c433 --}}
