@@ -16,29 +16,12 @@ into the {body} of the default.hbs template --}}
 </style>
 
 <div class="site-header-content">
-    {{#get "tags" visibility="all" limit="all"}}
-    {{#foreach tags}}
-      <li>
-        <a href="{{url}}" title="{{name}}" class="tag tag-{{id}} {{slug}}">{{name}}</a>
-      </li>
-        {{#if feature_image}}
-            {{!-- This is a responsive image, it loads different sizes depending on device
-            https://medium.freecodecamp.org/a-guide-to-responsive-images-with-ready-to-use-templates-c400bd65c433 --}}
             <img class="site-header-cover"
-                src="{{feature_image}}"
+                src="https://clockworkstudios.net/content/images/2021/12/Dex-Clockwork-Black.png"
             />
-        {{/if}}
-    {{/foreach}}
-    
     <h1 class="site-title">
-        {{#if feature_image}}
-            <img class="site-logo" src="{{feature_image}}" alt="{{slug}}" />
-        {{else}}
-            {{name}}
-        {{/if}}
+        <img class="site-logo" src="https://clockworkstudios.net/content/images/2021/12/Dex-Clockwork-Black.png" alt="Clockwork" />
     </h1>
-    <p>{{description}}</p>
-    {{/get}}
 </div>
 
 {{!-- The main content area --}}
