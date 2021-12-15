@@ -16,7 +16,7 @@ into the {body} of the default.hbs template --}}
 </style>
 
 <div class="site-header-content">
-    {{#get "tags" visibility="internal" limit="all"}}
+    {{#get "tags" visibility="all" limit="all"}}
     {{#foreach tags}}
       <li>
         <a href="{{url}}" title="{{name}}" class="tag tag-{{id}} {{slug}}">{{name}}</a>
