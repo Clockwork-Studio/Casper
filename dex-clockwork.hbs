@@ -43,44 +43,44 @@ into the {body} of the default.hbs template --}}
 <main id="site-main" class="site-main outer">
     <div class="inner posts">
         
-
-        <div class="post-feed">
-            {{#get "posts" limit="all" filter="tag:dex+tag:clockwork+tag:hash-creature" order="title asc"}}
-                {{#foreach posts}}
-
-                    {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
-                    {{> "dex-card"}}
-
-                {{/foreach}}
-            {{/get}}
-        </div>
-
-
-        <div class="post-feed">
-                    {{#get "posts" limit="all" filter="tag:dex+tag:clockwork+tag:hash-world" order="title asc"}}
-                        {{#foreach posts}}
-
-                            {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
-                            {{> "dex-card"}}
-
-                        {{/foreach}}
-                    {{/get}}
-                </div>
-
-
-        
-            {{#get "posts" limit="all" filter="tag:dex+tag:clockwork+tag:-hash-creature+tag:-hash-world" order="title asc"}}
+        {{#get "posts" limit="all" filter="tag:dex+tag:clockwork+tag:hash-creature" order="title asc"}}
             {{#if posts}}
                 <div class="post-feed"></div>
                     {{#foreach posts}}
 
-                        {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
+                        {{!-- The tag below includes the markup for each post - partials/dex-card.hbs --}}
                         {{> "dex-card"}}
 
                     {{/foreach}}
                 </div>
-                {{/if}}
-            {{/get}}
+            {{/if}}
+        {{/get}}
+
+        {{#get "posts" limit="all" filter="tag:dex+tag:clockwork+tag:hash-world" order="title asc"}}
+            {{#if posts}}
+                <div class="post-feed"></div>
+                    {{#foreach posts}}
+
+                        {{!-- The tag below includes the markup for each post - partials/dex-card.hbs --}}
+                        {{> "dex-card"}}
+
+                    {{/foreach}}
+                </div>
+            {{/if}}
+        {{/get}}
+    
+        {{#get "posts" limit="all" filter="tag:dex+tag:clockwork+tag:-hash-creature+tag:-hash-world" order="title asc"}}
+            {{#if posts}}
+                <div class="post-feed"></div>
+                    {{#foreach posts}}
+
+                        {{!-- The tag below includes the markup for each post - partials/dex-card.hbs --}}
+                        {{> "dex-card"}}
+
+                    {{/foreach}}
+                </div>
+            {{/if}}
+        {{/get}}
 
 
     </div>
