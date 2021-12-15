@@ -16,7 +16,9 @@ into the {body} of the default.hbs template --}}
 </style>
 
 <div class="site-header-content">
-    {{#get "tags" limit="all" filter="slug:clockwork"}}{{tags}}
+    {{#get "tags" limit="all"}}
+    {{tags}}
+            {{!-- <img src="{{feature_image}}" />
         {{#if feature_image}}
             {{!-- This is a responsive image, it loads different sizes depending on device
             https://medium.freecodecamp.org/a-guide-to-responsive-images-with-ready-to-use-templates-c400bd65c433 --}}
@@ -38,7 +40,7 @@ into the {body} of the default.hbs template --}}
             {{@site.title}}
         {{/if}}
     </h1>
-    <p>{{@site.description}}</p>
+    <p>{{@site.description}}</p> --}}
     {{/get}}
 </div>
 
