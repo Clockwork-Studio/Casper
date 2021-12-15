@@ -68,16 +68,20 @@ into the {body} of the default.hbs template --}}
                 </div>
 
 
-        <div class="post-feed">
+        
             {{#get "posts" limit="all" filter="tag:dex+tag:clockwork+tag:-hash-creature+tag:-hash-world" order="title asc"}}
-                {{#foreach posts}}
+            {{#if posts}}
+                <div class="post-feed"></div>
+                    {{#foreach posts}}
 
-                    {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
-                    {{> "dex-card"}}
+                        {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
+                        {{> "dex-card"}}
 
-                {{/foreach}}
+                    {{/foreach}}
+                </div>
+                {{/if}}
             {{/get}}
-        </div>
+
 
     </div>
 </main>
