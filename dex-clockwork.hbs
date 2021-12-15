@@ -45,7 +45,7 @@ into the {body} of the default.hbs template --}}
         
 
         <div class="post-feed">
-            {{#get "posts" limit="all" filter="tag:dex+tag:clockwork+tag:creature" order="title asc"}}
+            {{#get "posts" limit="all" filter="tag:dex+tag:clockwork+tag:hash-creature" order="title asc"}}
                 {{#foreach posts}}
 
                     {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
@@ -57,7 +57,7 @@ into the {body} of the default.hbs template --}}
 
 
         <div class="post-feed">
-                    {{#get "posts" limit="all" filter="tag:dex+tag:clockwork+tag:world" order="title asc"}}
+                    {{#get "posts" limit="all" filter="tag:dex+tag:clockwork+tag:hash-world" order="title asc"}}
                         {{#foreach posts}}
 
                             {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
@@ -66,6 +66,18 @@ into the {body} of the default.hbs template --}}
                         {{/foreach}}
                     {{/get}}
                 </div>
+
+
+        <div class="post-feed">
+            {{#get "posts" limit="all" filter="tag:dex+tag:clockwork+tag:-hash-creature+tag:-hash-world" order="title asc"}}
+                {{#foreach posts}}
+
+                    {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
+                    {{> "dex-card"}}
+
+                {{/foreach}}
+            {{/get}}
+        </div>
 
     </div>
 </main>
