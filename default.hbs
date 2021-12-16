@@ -1,7 +1,7 @@
 <!DOCTYPE html>
+
 <html lang="{{@site.locale}}"{{#match @custom.color_scheme "Dark"}} class="dark-mode"{{/match}}{{#match @custom.color_scheme "Auto"}} class="auto-color"{{/match}}>
 <head>
-
     {{!-- Basic meta - advanced meta is output with {ghost_head} below --}}
     <title>{{meta_title}}</title>
     <meta charset="utf-8" />
@@ -27,6 +27,7 @@
     {{ghost_head}}
 
 </head>
+
 <body class="{{body_class}}{{#match @custom.title_font "=" "Elegant serif"}} has-serif-title{{/match}}{{#match @custom.body_font "=" "Modern sans-serif"}} has-sans-body{{/match}}">
 <div class="viewport">
 
@@ -53,12 +54,12 @@
             <div class="gh-head-actions">
                 <div class="gh-social">
                     {{#if @site.facebook}}
-                        <a class="gh-social-facebook" href="{{facebook_url @site.facebook}}" title="Facebook" target="_blank" rel="noopener">{{> "icons/facebook"}}</a>
+                    <a class="gh-social-facebook" href="{{facebook_url @site.facebook}}" title="Facebook" target="_blank" rel="noopener">{{> "icons/facebook"}}</a>
                     {{/if}}
                     <a class="gh-social-instagram" href="https://www.instagram.com/clockworkstudios8/"  title="Instagram" target="_blank" rel="noopener">{{> "icons/instagram"}}</a>
                     <a class="gh-social-pinterest" href="https://www.pinterest.com/clockworkstudios1/"  title="Pinterest" target="_blank" rel="noopener">{{> "icons/pinterest"}}</a>
                     {{#if @site.twitter}}
-                        <a class="gh-social-twitter" href="{{twitter_url @site.twitter}}" title="Twitter" target="_blank" rel="noopener">{{> "icons/twitter"}}</a>
+                    <a class="gh-social-twitter" href="{{twitter_url @site.twitter}}" title="Twitter" target="_blank" rel="noopener">{{> "icons/twitter"}}</a>
                     {{/if}}
                     <a class="gh-social-youtube" href="https://www.youtube.com/channel/UCvYdRKuaPIS4AR9zMVqE0fg" title="YouTube" target="_blank" rel="noopener">{{> "icons/youtube"}}</a>
                 </div>
@@ -74,11 +75,15 @@
     {{!-- The global footer at the very bottom of the screen --}}
     <footer class="site-footer outer">
         <div class="inner">
-            <section class="copyright"><a href="{{@site.url}}">{{@site.title}}</a> &copy; {{date format="YYYY"}}</section>
+            <section class="copyright">
+                <a href="{{@site.url}}">{{@site.title}}</a> &copy; {{date format="YYYY"}}
+            </section>
             <nav class="site-footer-nav">
                 {{navigation type="secondary"}}
             </nav>
-            <div><a href="https://clockworkstudios.net/open-source/" target="_blank" rel="noopener">Powered by Open Source software</a></div>
+            <div>
+                <a href="https://clockworkstudios.net/open-source/" target="_blank" rel="noopener">Powered by Open Source software</a>
+            </div>
         </div>
     </footer>
 
@@ -92,20 +97,23 @@
     integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
     crossorigin="anonymous">
 </script>
+
 <script src="{{asset "built/casper.js"}}"></script>
+
 <script>
-$(document).ready(function () {
-    // Mobile Menu Trigger
-    $('.gh-burger').click(function () {
-        $('body').toggleClass('gh-head-open');
+    $(document).ready(function () {
+        // Mobile Menu Trigger
+        $('.gh-burger').click(function () {
+            $('body').toggleClass('gh-head-open');
+        });
+        // FitVids - Makes video embeds responsive
+        $(".gh-content").fitVids();
     });
-    // FitVids - Makes video embeds responsive
-    $(".gh-content").fitVids();
-});
 </script>
 
 {{!-- Ghost outputs required functional scripts with this tag - it should always be the last thing before the closing body tag --}}
 {{ghost_foot}}
 
 </body>
+
 </html>
