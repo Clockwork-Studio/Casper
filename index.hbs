@@ -39,7 +39,20 @@ into the {body} of the default.hbs template --}}
 
 {{!-- The main content area --}}
 <main id="site-main" class="site-main outer">
+<<<<<<< Updated upstream
 <div class="inner posts">
+=======
+    <div class="inner posts">
+
+        <div class="post-feed{{#match @custom.feed_layout "List"}} list{{/match}}">
+            {{#foreach posts}}
+                {{^has tag="#Hidden"}}
+                    {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
+                    {{> "post-card"}}
+                {{/has}}
+            {{/foreach}}
+        </div>
+>>>>>>> Stashed changes
 
     <div class="post-feed">
         {{#foreach posts}}
