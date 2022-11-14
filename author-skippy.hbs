@@ -6,7 +6,7 @@
     <div class="inner posts">
 
         <header class="author-profile">
-            {{#author}}
+            {{#get "authors" filter="slug:skippy" limit="1"}} {{!-- {{#author}} --}}
             {{!-- Everything inside the #author tags pulls data from the author --}}
 
             <div class="author-profile-content">
@@ -45,7 +45,7 @@
 
             </div>
 
-            {{/author}}
+            {{/author}} {{!-- {{/author}} --}} 
         </header>
 
         <div class="post-feed">
