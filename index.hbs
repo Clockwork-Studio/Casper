@@ -22,13 +22,13 @@ into the {body} of the default.hbs template --}}
 
     {{#match @custom.header_style "!=" "Hidden"}}
         <div class="site-header-inner inner">
-            {{#unless @custom.show_logo_in_navigation}}
+            {{#match @custom.navigation_layout "Logo on cover"}}
                 {{#if @site.logo}}
                     <img class="site-logo" src="{{@site.logo}}" alt="{{@site.title}}">
                 {{else}}
                     <h1 class="site-title">{{@site.title}}</h1>
                 {{/if}}
-            {{/unless}}
+            {{/match}}
             {{#if @site.description}}
                 <p class="site-description">{{@site.description}}</p>
             {{/if}}
@@ -39,20 +39,7 @@ into the {body} of the default.hbs template --}}
 
 {{!-- The main content area --}}
 <main id="site-main" class="site-main outer">
-<<<<<<< Updated upstream
 <div class="inner posts">
-=======
-    <div class="inner posts">
-
-        <div class="post-feed{{#match @custom.feed_layout "List"}} list{{/match}}">
-            {{#foreach posts}}
-                {{^has tag="#Hidden"}}
-                    {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
-                    {{> "post-card"}}
-                {{/has}}
-            {{/foreach}}
-        </div>
->>>>>>> Stashed changes
 
     <div class="post-feed">
         {{#foreach posts}}
