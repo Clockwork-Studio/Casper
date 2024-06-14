@@ -2,7 +2,7 @@
     "name": "clockwork",
     "description": "A modified theme built for Clockwork Studios",
     "demo": "https://demo.ghost.io",
-    "version": "5.7.1",
+    "version": "5.7.2",
     "engines": {
         "ghost": ">=5.0.0"
     },
